@@ -1,0 +1,39 @@
+<% if @shorthand_url.present? %>
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Loading ...</h1>
+  </div>
+
+  <div class="overlay">
+    <div class="wrapper">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+
+  <script type="application/javascript">
+    $(document).ready(function () {
+      setTimeout(function () {
+        var url = '<%= @shorthand_url.actual_url %>';
+        window.open(url,"_top");
+      }, 1000);
+    });
+
+  </script>
+<% else %>
+  <div class="row">
+    <div class="col-sm-6 col-md-3">&nbsp;</div>
+    <div class="col-sm-6 col-md-6">
+      <div class="card text-white bg-danger text-center">
+        <div class="card-body">
+          <blockquote class="card-bodyquote">
+            <p>Something went wrong. Please check URL</p>
+            <footer>Invalid URL</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">&nbsp;</div>
+  </div>
+<% end %>

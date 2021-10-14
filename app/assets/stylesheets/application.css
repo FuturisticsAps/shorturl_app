@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/*flash*/
+.alert-error {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+	text-align: left;
+}
+
+.alert-alert {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+	text-align: left;
+}
+
+.alert-success {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #468847;
+	text-align: left;
+}
+
+.alert-notice {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #468847;
+	text-align: left;
+}
+
+.alert {
+	margin-bottom: 0rem;
+}
+
+.overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: 100;
+}
+
+.wrapper{
+	width: 100px;
+	height: 100px;
+	background: white;
+	display: flex;
+	flex-flow: row wrap;
+	position: relative;
+	top: 40%;
+	left: 40%;
+	transform: translate(-50%, -50%);
+	padding: 3px;
+}
+
+.box{
+	width: 50%;
+	height: 50%;
+	flex: 50%;
+	transition: 0.5s;
+	border: 2px solid white;
+}
+
+.box:nth-child(1){
+	animation: load 1s infinite;
+}
+
+.box:nth-child(2){
+	animation: load2 1s infinite;
+	animation-delay: 0.2s;
+}
+
+.box:nth-child(3){
+	animation: load3 1s infinite;
+	animation-delay: 0.7s;
+}
+
+.box:nth-child(4){
+	animation: load4 1s infinite;
+	animation-delay: 0.5s;
+}
+
+@keyframes load {
+	0% { background: rgba(231, 76, 60, 0); }
+	30% { background: rgb(231, 76, 60); }
+
+	100% { background: rgba(231, 76, 60, 0); }
+}
+
+@keyframes load2 {
+	0% { background: rgba(46, 204, 113, 0); }
+	30% { background: rgb(46, 204, 113); }
+
+	100% { background: rgba(46, 204, 113, 0); }
+}
+
+@keyframes load3 {
+	0% { background: rgba(230, 126, 34, 0); }
+	30% { background: rgb(230, 126, 34); }
+
+	100% { background: rgba(230, 126, 34, 0); }
+}
+
+@keyframes load4 {
+	0% { background: rgba(241, 196, 15, 0); }
+	30% { background: rgb(241, 196, 15); }
+
+	100% { background: rgba(241, 196, 15, 0); }
+}

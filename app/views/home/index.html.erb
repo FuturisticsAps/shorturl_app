@@ -1,0 +1,75 @@
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Home</h1>
+</div>
+
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <form accept-charset="UTF-8" action="/save-url" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        <div class="card">
+          <div class="card-header"><strong>ADD URL</strong></div>
+          <div class="card-body">
+            <div class="form-group">
+              <div class="input-group col-4" style="float: left;">
+                <div class="input-group-prepend"><span class="input-group-text">Title</span></div>
+                <input class="form-control"
+                       id="title" name="shorthand_url[title]" type="text" autocomplete="off" required="true">
+              </div>
+              <div class="input-group col-6">
+                <div class="input-group-prepend"><span class="input-group-text">Link</span></div>
+                <input class="form-control"
+                       id="url" name="shorthand_url[url]" type="text" autocomplete="off" required="true">
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-primary" type="submit"> Submit</button>
+            <button class="btn btn-sm btn-danger" type="reset"> Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+
+  <div class="card mb-4 col-12">
+    <div class="card-body">
+      <!--Table-->
+      <table class="table table-striped">
+        <!--Table head-->
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>URL</th>
+          <th>ShortURL</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          <% @shorthand_urls.each do |url| %>
+            <tr>
+              <th scope="row"><%= url.id %></th>
+              <td><%= url.title %></td>
+              <td><%= url.actual_url %></td>
+              <td><%= "http://localhost:3000/#{url.short_url}" %></td>
+              <td>
+                <a href="<%= "http://localhost:3000/#{url.short_url}" %>" target='_blank'>Click Here</a>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+    </div>
+  </div>
+
+</div>
